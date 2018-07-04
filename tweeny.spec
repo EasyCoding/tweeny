@@ -57,4 +57,5 @@ popd
 %{_libdir}/cmake/Tweeny
 
 %changelog
-
+* Wed Jul 04 2018 Vitaly Zaitsev <vitaly@easycoding.org> - 2-0.1.20180504git43f4130
+- Initial SPEC release.
