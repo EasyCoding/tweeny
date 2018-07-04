@@ -5,7 +5,7 @@
 Name: tweeny
 Summary: Modern C++ tweening library
 Version: 2
-Release: 0.1.%{date}git%{shortcommit0}%{?dist}
+Release: 1.%{date}git%{shortcommit0}%{?dist}
 
 License: MIT
 URL: https://github.com/mobius3/%{name}
@@ -51,5 +51,5 @@ popd
 %{_libdir}/cmake/Tweeny
 
 %changelog
-* Wed Jul 04 2018 Vitaly Zaitsev <vitaly@easycoding.org> - 2-0.1.20180504git43f4130
+* Wed Jul 04 2018 Vitaly Zaitsev <vitaly@easycoding.org> - 2-1.20180504git43f4130
 - Initial SPEC release.
