@@ -1,3 +1,7 @@
+# This is a header-only library, but it install also cmake
+# scripts to %%{_libdir}, so it cannot be noarch.
+%global debug_package %{nil}
+
 %global commit0 43f4130f7e4a67c19d870b60864bc2862c19b81f
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global date 20180504
