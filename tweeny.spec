@@ -2,18 +2,14 @@
 # scripts to %%{_libdir}, so it cannot be noarch.
 %global debug_package %{nil}
 
-%global commit0 43f4130f7e4a67c19d870b60864bc2862c19b81f
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20180504
-
 Name: tweeny
 Summary: Modern C++ tweening library
-Version: 2
-Release: 2.%{date}git%{shortcommit0}%{?dist}
+Version: 3
+Release: 1%{?dist}
 
 License: MIT
 URL: https://github.com/mobius3/%{name}
-Source0: %{url}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source0: %{url}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires: ninja-build
 BuildRequires: gcc-c++
@@ -31,7 +27,7 @@ Provides: %{name}-static = %{?epoch:%{epoch}:}%{version}-%{release}
 %{summary}.
 
 %prep
-%autosetup -n %{name}-%{commit0} -p1
+%autosetup -p1
 mkdir -p %{_target_platform}
 sed -i 's@lib/@%{_libdir}/@g' cmake/SetupExports.cmake
 
@@ -55,6 +51,9 @@ popd
 %{_libdir}/cmake/Tweeny
 
 %changelog
+* Mon Dec 10 2018 Vitaly Zaitsev <vitaly@easycoding.org> - 3-1
+- Updated to version 3.
+
 * Sat Jul 14 2018 Fedora Release Engineering <releng@fedoraproject.org> - 2-2.20180504git43f4130
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
 
