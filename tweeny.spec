@@ -5,7 +5,7 @@
 Name: tweeny
 Summary: Modern C++ tweening library
 Version: 3
-Release: 3%{?dist}
+Release: 4%{?dist}
 
 License: MIT
 URL: https://github.com/mobius3/%{name}
@@ -51,6 +51,9 @@ popd
 %{_libdir}/cmake/Tweeny
 
 %changelog
+* Fri Jan 31 2020 Fedora Release Engineering <releng@fedoraproject.org> - 3-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
+
 * Sat Jul 27 2019 Fedora Release Engineering <releng@fedoraproject.org> - 3-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
 
