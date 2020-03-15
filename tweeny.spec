@@ -9,7 +9,7 @@ Release: 1%{?dist}
 
 License: MIT
 URL: https://github.com/mobius3/%{name}
-Source0: %{url}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0: %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires: ninja-build
 BuildRequires: gcc-c++
@@ -29,7 +29,7 @@ Provides: %{name}-static = %{?epoch:%{epoch}:}%{version}-%{release}
 %prep
 %autosetup -p1
 mkdir -p %{_target_platform}
-sed -i 's@lib/@%{_libdir}/@g' cmake/SetupExports.cmake
+sed -e 's@lib/@%{_lib}/@g' -i cmake/SetupExports.cmake
 
 %build
 pushd %{_target_platform}
