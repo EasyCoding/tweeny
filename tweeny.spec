@@ -6,8 +6,8 @@
 
 Name: tweeny
 Summary: Modern C++ tweening library
-Version: 3.1.1
-Release: 2%{?dist}
+Version: 3.2.0
+Release: 1%{?dist}
 
 License: MIT
 URL: https://github.com/mobius3/%{name}
@@ -30,14 +30,13 @@ Provides: %{name}-static = %{?epoch:%{epoch}:}%{version}-%{release}
 
 %prep
 %autosetup -p1
-mkdir -p %{_target_platform}
-sed -e 's@lib/@%{_lib}/@g' -i cmake/SetupExports.cmake
 
 %build
 %cmake -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
-    -DTWEENY_BUILD_EXAMPLES=OFF \
-    -DTWEENY_BUILD_DOCUMENTATION=OFF
+    -DTWEENY_BUILD_EXAMPLES:BOOL=OFF \
+    -DTWEENY_BUILD_DOCUMENTATION:BOOL=OFF \
+    -DTWEENY_BUILD_SANDBOX:BOOL=OFF
 %cmake_build
 
 %install
@@ -50,6 +49,9 @@ sed -e 's@lib/@%{_lib}/@g' -i cmake/SetupExports.cmake
 %{_libdir}/cmake/Tweeny
 
 %changelog
+* Thu Feb 18 2021 Vitaly Zaitsev <vitaly@easycoding.org> - 3.2.0-1
+- Updated to version 3.2.0.
+
 * Wed Jan 27 2021 Fedora Release Engineering <releng@fedoraproject.org> - 3.1.1-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
 
